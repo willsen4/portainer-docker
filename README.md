@@ -12,6 +12,7 @@ nano docker-compose.yml
 ````
 ### Cole o conteúdo:
 YAML
+### Salve e feche o arquivo. (Em nano, pressione Ctrl+X, depois Y e Enter).
 
 ### Suba os serviços com Docker Compose:
 ````Bash
@@ -42,4 +43,5 @@ docker compose down -v
 docker compose ps
 
 ````
+
 
