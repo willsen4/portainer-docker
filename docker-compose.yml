@@ -1,0 +1,14 @@
+services:
+  portainer:
+    container_name: portainer
+    image: portainer/portainer-ce:latest
+    command: -H unix:///var/run/docker.sock --tlsskipverify
+    restart: always
+    ports:
+      - "8000:8000" # Porta para o Edge Agent, se for usar
+      - "9443:9443" # Porta padrão para a interface web do Portainer (HTTPS)
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+volumes:
+  portainer_data:
