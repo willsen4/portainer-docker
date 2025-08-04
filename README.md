@@ -1,4 +1,7 @@
-﻿### Crie um diretório para o seu projeto:
+# Como Instalar o Portainer no Docker
+## O Portainer é uma ferramenta de gerenciamento de UI para o Docker, que facilita a visualização e o gerenciamento de seus contêineres, volumes, redes e imagens.
+ 
+ ### Crie um diretório para o seu projeto:
 ````Bash
 mkdir portainer-docker
 cd portainer-docker
@@ -39,3 +42,4 @@ docker compose down -v
 docker compose ps
 
 ````
+
