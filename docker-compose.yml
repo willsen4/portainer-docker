@@ -1,6 +1,6 @@
 services:
   portainer:
-    container_name: portainer
+    container_name: portainer-app
     image: portainer/portainer-ce:latest
     command: -H unix:///var/run/docker.sock --tlsskipverify
     restart: always
@@ -12,3 +12,7 @@ services:
       - portainer_data:/data
 volumes:
   portainer_data:
+networks:
+  portainer_network:
+    name: portainer_network # <--- ESTA LINHA GARANTE O NOME EXATO DA REDE
+    driver: bridge
