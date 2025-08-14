@@ -4,6 +4,8 @@
  ### Crie um diretório para o seu projeto:
 ````Bash
 mkdir portainer-docker
+````
+````Bash
 cd portainer-docker
 ````
 ---------
@@ -49,6 +51,7 @@ docker compose down -v
 docker compose ps
 ````
 -----------
+
 
 
 
