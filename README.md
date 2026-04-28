@@ -15,7 +15,28 @@ nano docker-compose.yml
 ````
 ----------
 ### Cole o conteúdo:
-YAML
+
+```YAML
+services:
+  portainer:
+    container_name: portainer-app
+    image: portainer/portainer-ce:latest
+    command: -H unix:///var/run/docker.sock --tlsskipverify
+    restart: always
+    ports:
+      - "8000:8000" # Porta para o Edge Agent, se for usar
+      - "9443:9443" # Porta padrão para a interface web do Portainer (HTTPS)
+      - "9000:9000" # Porta padrão para a interface web do Portainer (HTTP)
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+volumes:
+  portainer_data:
+networks:
+  portainer_network:
+    name: portainer_network # <--- ESTA LINHA GARANTE O NOME EXATO DA REDE
+    driver: bridge
+```
 ### Salve e feche o arquivo. (Em nano, pressione Ctrl+X, depois Y e Enter).
 -------------
 ### Suba os serviços com Docker Compose:
